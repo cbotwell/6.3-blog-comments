@@ -3,7 +3,8 @@ var Comment = Backbone.Model.extend({
   defaults: {
     name: '',
     email: '',
-    commentString: ''
+    commentString: '',
+    createDate: new Date()
   }
 });
 
