@@ -62,6 +62,7 @@ button:focus, input:focus, textarea:focus {
     input, textarea {
         @include span-columns(12);
         margin-bottom: 10px;
+        padding: 5px;
     }
 }
 
