@@ -20,7 +20,7 @@ body {
     transform: translateX(-50%);
 }
 .wrapper {
-    @include outer-container(500px);
+    @include outer-container();
 
 }
 .header, .main, .comments  {

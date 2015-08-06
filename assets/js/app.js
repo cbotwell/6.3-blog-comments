@@ -21,12 +21,12 @@ var CommentView = Backbone.View.extend({
 
   upvote: function() {
     var upvotes = this.model.get('upvotes');
-    this.model.set({upvotes: ++upvotes});
+    this.model.save({upvotes: ++upvotes});
   },
 
   downvote: function() {
     var downvotes = this.model.get('downvotes');
-    this.model.set({downvotes: ++downvotes});
+    this.model.save({downvotes: ++downvotes});
   }
 
 });
