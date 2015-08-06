@@ -7,17 +7,28 @@ var CommentView = Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render);
   },
 
-  // events: {
-  //   'click .upvote': 'upvote',
-  //   'click .downvote': 'downvote'
-  // },
+  events: {
+    'click .upvote': 'upvote',
+    'click .downvote': 'downvote'
+  },
 
   render: function() {
     var html = this.template(this.model.toJSON());
     this.$el.html(html);
 
     return this;
+  },
+
+  upvote: function() {
+    var upvotes = this.model.get('upvotes');
+    this.model.set({upvotes: ++upvotes});
+  },
+
+  downvote: function() {
+    var downvotes = this.model.get('downvotes');
+    this.model.set({downvotes: ++downvotes});
   }
+
 });
 
 var AppView = Backbone.View.extend({
@@ -60,7 +71,7 @@ var AppView = Backbone.View.extend({
   submitComment: function() {
     var name = this.$el.find('input.name').val();
     var email = this.$el.find('input.email').val();
-    var commentString = this.$el.find('input.comment').val();
+    var commentString = this.$el.find('textarea.comment').val();
     this.collection.create({name: name, email: email, commentString: commentString, createDate: new Date()});
   }
 });

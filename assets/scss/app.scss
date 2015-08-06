@@ -1,5 +1,8 @@
 @import 'reset';
 
+$fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts";
+@import 'font-awesome';
+
 @import 'bourbon';
 @import 'neat';
 @import 'border-box';
@@ -17,8 +20,8 @@ body {
     transform: translateX(-50%);
 }
 .wrapper {
-    @include outer-container();
-    width: 500px;
+    @include outer-container(500px);
+
 }
 .header, .main, .comments  {
     @include span-columns(12);
@@ -76,5 +79,13 @@ button:focus, input:focus, textarea:focus {
     }
     .comment {
         margin-top: 10px;
+    }
+}
+.votes {
+    margin-top: 20px;
+    color: gray;
+    font-size: 0.8em;
+    .fa-caret-up:hover, .fa-caret-down:hover {
+        color: black;
     }
 }
