@@ -4,7 +4,9 @@ var Comment = Backbone.Model.extend({
     name: '',
     email: '',
     commentString: '',
-    createDate: new Date()
+    createDate: null,
+    upvotes: 0,
+    downvotes: 0
   }
 });
 

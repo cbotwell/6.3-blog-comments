@@ -61,6 +61,6 @@ var AppView = Backbone.View.extend({
     var name = this.$el.find('input.name').val();
     var email = this.$el.find('input.email').val();
     var commentString = this.$el.find('input.comment').val();
-    this.collection.create({name: name, email: email, commentString: commentString});
+    this.collection.create({name: name, email: email, commentString: commentString, createDate: new Date()});
   }
 });

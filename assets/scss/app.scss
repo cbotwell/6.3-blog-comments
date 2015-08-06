@@ -4,6 +4,77 @@
 @import 'neat';
 @import 'border-box';
 
+$main-color: #2e9fff;
+$hover-color: #164b78;
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+#target {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.wrapper {
+    @include outer-container();
+    width: 500px;
+}
+.header, .main, .comments  {
+    @include span-columns(12);
+}
+
+.header {
+    padding-bottom: 20px;
+}
+
+.header {
+    border-bottom: 1px solid gray;
+    h3 {
+        margin-bottom: 10px;
+        font-size: 2em;
+        font-weight: bold;
+    }
+}
+
+button {
+    background: $main-color;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+}
+button:hover {
+    background: $hover-color;
+}
+
+button:focus, input:focus, textarea:focus {
+    outline: none;
+}
+
 .new-comment {
     display: none;
+    padding-top: 20px;
+    input, textarea {
+        @include span-columns(12);
+        margin-bottom: 10px;
+    }
+}
+
+.comments li {
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+        color: $main-color;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .comment {
+        margin-top: 10px;
+    }
 }
