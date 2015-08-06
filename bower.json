@@ -17,6 +17,7 @@
     "handlebars": "~3.0.3",
     "reset-css": "~2.0.2011012602",
     "neat": "~1.7.2",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "fontawesome": "~4.4.0"
   }
 }
